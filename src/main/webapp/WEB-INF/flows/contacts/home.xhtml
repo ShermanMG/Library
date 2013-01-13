@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Search Page</title>
+</h:head>
+<h:body>
+	<ui:composition template="/WEB-INF/layouts/standard.xhtml">
+
+
+		<ui:define name="content">
+			<p:outputPanel id="panel">
+				<h:form>
+					<p:dataTable id="tables" value="#{bookController.bookList}"
+						var="book" captionStyle="font-size: 0.95em; font-style:italic"
+						headerStyle="text-align:center" paginator="true">
+
+						<f:facet style="text-align:center" name="caption"> Search Results</f:facet>
+
+						<p:column>
+							<f:facet name="header">Book ID</f:facet>
+							<!-- left column components -->
+		#{book.id}
+		</p:column>
+						<p:column>
+							<f:facet name="header"> Title</f:facet>
+		
+			#{book.title}
+		</p:column>
+						<p:column>
+							<f:facet name="header"> Author</f:facet>
+			#{book.price}
+		</p:column>
+
+						<p:column>
+							<f:facet name="header">Description</f:facet>
+
+
+						</p:column>
+
+					</p:dataTable>
+					<p:commandButton value="Add to Cart" action="remove"
+						update="tables" />
+				</h:form>
+
+			</p:outputPanel>
+			<h:link outcome="/home" value="Search Books" />
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:p = "http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:insert name="windowTitle" />#TEMPOALTE</title>
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="EmulateIE8" />
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+		<title>PrimeFaces - ShowCase</title>
+	</f:facet>
+
+
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/resources/css/main.css" />
+</h:head>
+
+<h:body>
+	<div id="body">
+
+		<div id="heading">
+			<ui:insert name="heading">
+W			At da fak hedaing here
+			</ui:insert>
+		</div>
+		<div id="topnav">
+			<p:button style="margin:0px 10px 0px 10px" outcome="login" title="Login" value="Login"></p:button>
+			<p:button style="margin:0px 10px 0px 10px" outcome="search" title="Login" value="Search Books"></p:button>
+			<p:button style="margin:0px 10px 0px 10px" outcome="order" title="Login" value="Order"></p:button>
+			<p:button style="margin:0px 10px 0px 10px" outcome="profile" title="Login" value="Profile"></p:button>
+		</div>
+
+		<div id="sidebarLeft">
+			<ui:insert name="sidebarLeft">
+ 			oow i'm sidebar
+			</ui:insert>
+		</div>
+
+		<div id="content">
+			<ui:insert name="content" />
+		</div>
+		<ui:debug />
+	</div>
+</h:body>
+</html>

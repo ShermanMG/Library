@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>JSF 2.0 Hello World</title>
+</h:head>
+<h:body>
+	<h3>JSF 2.0 Hello World Example - HOMEEEEEEEEEEEEEE.xhtml</h3>
+	<h:form>
+
+		<h:commandButton value="Welcome Me" action="#{testController.test()}"></h:commandButton>
+		<a href="intro">go there ! </a>
+		<h4>#{testController.testz}</h4>
+		<h:outputLink outcome="intro" value="intro"> there </h:outputLink>
+
+
+		<h:form>
+			<p:dataTable id="tables" value="#{bookController.bookList}"
+				var="book" 
+				captionStyle="font-size: 0.95em; font-style:italic"
+				headerStyle="text-align:center">
+
+				<f:facet style="text-align:center" name="caption"> Search Results</f:facet>
+
+				<p:column>
+					<f:facet name="header">Book ID</f:facet>
+					<!-- left column components -->
+		#{book.id}
+		</p:column>
+				<p:column>
+					<f:facet name="header"> Title</f:facet>
+		
+			#{book.title}
+		</p:column>
+				<p:column>
+					<f:facet name="header"> Author</f:facet>
+			#{book.price}
+		</p:column>
+			
+				<p:column>
+					<f:facet name="header">Description</f:facet>
+					<h:commandButton value="Add to Cart" 
+						actionListener="#{bookController.remove()}"  ajax="false" />
+					
+				</p:column>
+			</p:dataTable>
+		</h:form>
+
+
+		<h:link outcome="/home" value="Search Books" />
+	</h:form>
+</h:body>
+</html>
